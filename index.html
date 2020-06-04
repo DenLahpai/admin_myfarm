@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta http-equiv="refresh" content="0;EN/"> -->
+	<link id="link" rel="stylesheet" href="styles/main.css">	
+	<title>Login</title>
+</head>
+<body>
+	<!-- main-content -->
+	<div class="main-content">
+		<!-- wrapper -->
+		<div class="wrapper">
+			<section class="login-form">
+				<form id="login-form" method="POST" action="login.php">
+					<div class="welcome">
+						<h2>Welcome</h2>
+					</div>
+					<div class="username">
+						<input type="text" name="username" id="username">
+					</div>
+					<div class="password">
+						<input type="password" name="password" id="password">
+					</div>					
+					<div class="button">
+						<button type="button" id="button-submit">Submit</button>
+					</div>
+					<div class="error"></div>
+				</form>
+			</section>
+		</div>
+		<!-- end of wrapper -->
+	</div>
+	<!-- end of main-content -->
+</body>
+<script type="text/javascript" src="scripts/jQuery.js"></script>
+<script type="text/javascript" src="scripts/main.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.get("footer.php", function (data) {
+			$(".main-content").append(data);
+		});
+		$("#button-submit").on("click", function () {
+			login();
+		});
+	});
+</script>
+</html>

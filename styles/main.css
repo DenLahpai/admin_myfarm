@@ -1,0 +1,246 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.login-form {
+	margin-top: 60px;
+	text-align: center;
+}
+
+.login-form div {
+	margin: 6px;
+}
+
+header {
+	background: #F3F3F3;
+	padding: 3px 12px;
+}
+
+nav	{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.hamburger-layer {
+    width: 42px;
+    height: 9px;
+    background: silver;
+	margin: 6px 0px;
+	cursor: pointer;
+}
+
+.drop-menu {
+	display: none;
+	text-align: center;
+	background: snow;
+}
+
+.drop-menu button {
+	width: 90%;
+	margin: 12px auto;
+	padding: 18px 3px;
+	font-weight: bold;
+}
+
+.nav-mid {
+	font-style: italic;
+}
+
+#session_username {
+	cursor: pointer;
+}
+
+.main-content {
+	padding: 6px;
+}
+
+.title {
+	text-align: center;
+}
+
+.link-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+}
+
+.link-buttons div {
+	background: blue;
+	margin: 12px;
+}
+
+.link-buttons button {
+	width: 120px;
+	height: 120px;
+	font-size: 1.2em;
+}
+
+#admins {
+	display: none;
+}
+
+.admins-form {
+	text-align: center;
+}
+
+.admins-form div {
+	margin: 12px;
+}
+
+.admins-form div input {
+	width: 60%;
+}
+
+.menu-bar-items {
+	background: snow;
+	display: flex;
+}
+
+.menu-bar-item {
+	/*background: red;*/
+	justify-item: center;
+	padding: 6px;
+	margin: 3px 6px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.menu-bar-item input {
+	border: none;
+	outline: 0px;
+	background: none;
+	border-bottom: 2px solid gold;
+}
+
+.menu-bar-item select {
+	padding: 6px;
+}
+
+.menu-bar-item select[option] {
+	padding: 6px;
+}
+
+.grid-container {
+	margin-top: 6px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-gap: 6px;
+}
+
+.grid-item {
+	border: 1px solid gold;
+	padding: 6px;
+}
+
+.admins-data-grid-items {
+	background: silver;
+}
+
+.admins-data-grid-items div {
+	margin: 3px;
+	padding: 3px 6px;
+}
+
+input:read-only {
+	border: 0px;
+	background: none;
+	outline: 0px;
+}
+
+.admins-data-table table {
+	margin: 6px auto;
+	border-collapse: collapse;	
+}
+
+.admins-data-table table thead tr th {
+	border: 1px solid gold;
+	padding: 6px;
+}
+
+.admins-data-table table tbody tr td {
+	border: 1px solid gold;
+	padding: 6px;
+}
+
+.admins-data-table table tbody tr td input:read-only {
+	border: 0px;
+	background: none;
+	outline: 0px;
+}
+
+.users-data-grid-items div {
+	padding: 3px;
+}
+
+.users-data-grid-items form div select {
+	background: none;
+	outline: none;
+	border: none;
+}
+
+.users-data-grid-items form input:read-only {
+	border: 0px;
+	background: none;
+	outline: 0px;
+}
+
+.users-data-table table {
+	border-collapse: collapse;
+	margin: 3px auto;
+}
+
+.users-data-table thead tr th {
+	border: 1px solid gold;
+	padding: 3px 6px;
+}
+
+.users-data-table tbody tr td {
+	border: 1px solid gold;
+	padding: 3px 6px;
+}
+
+textarea {
+	padding: 6px;
+	resize: vertical;
+	width: 90%;	
+}
+
+textarea:read-only {
+	padding: 6px;
+	border: 0px;
+	background: none;
+	outline: 0px;
+}
+
+input {
+	padding:3px 6px;
+}
+
+
+footer {
+	text-align: center;
+	margin-top: 24px;
+	background: snow;
+	padding: 30px 12px;
+}
+
+button {
+	padding: 6px 12px;
+}
+
+.green {
+	color: green;
+	font-weight: bold;
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+}
+
+.input-error {
+	background: red;
+}

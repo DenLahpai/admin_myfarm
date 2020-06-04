@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Messages</title>
+</head>
+<body>
+	<!-- main-content -->
+	<div class="main-content">
+		<!-- wrapper -->
+		<div class="wrapper">
+			<!-- title -->
+			<div class="title">
+				<h4>Messages</h4>
+			</div>
+			<!-- end of title -->
+			<section id="messages-data">
+				
+			</section>
+		</div>
+		<!-- end of wrapper -->
+	</div>
+	<!-- end of main-content -->
+</body>
+<script type="text/javascript" src="scripts/jQuery.js"></script>
+<script type="text/javascript" src="scripts/main.js"></script>
+<script type="text/javascript">
+	$("document").ready(function () {
+		$.get("head.html", function (data) {
+			$("head").prepend(data);
+		});
+
+		$.get("header.html", function(data) {
+			$("body").prepend(data);
+		});
+
+		$.get("footer.php", function(data) {
+			$(".main-content").append(data);
+		});
+
+		changeData ('messages-data', 'messages_data_grid.php');
+		
+		check_session();
+		setInterval(function() {
+            check_session();
+        }, 6000);
+	});
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<title>Users</title>
+</head>
+<body>
+	<!-- main-content -->
+	<div class="main-content">
+		<!-- wrapper -->
+		<div class="wrapper">
+			<!-- title -->
+			<div class="title">
+				<h4>Users</h4>
+			</div>
+			<section id="users-data"></section>
+			<!-- end of title -->
+		</div>
+		<!-- end of wrapper -->
+	</div>
+	<!-- end of main-content -->
+</body>
+<script type="text/javascript" src="scripts/jQuery.js"></script>
+<script type="text/javascript" src="scripts/main.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$.get("head.html", function (data) {
+			$("head").prepend(data);
+		});
+
+		$.get("header.html", function(data){
+			$("body").prepend(data);
+		});
+
+		$.get("users-menu.php", function (data) {
+			$("#users-data").before(data);
+		});
+
+		$.get("footer.php", function (data) {
+			$("body").append(data);
+		});
+
+		changeData ('users-data', 'users_data_grid.php');
+
+		check_session();
+		setInterval(function() {
+            check_session();
+        }, 6000);
+	});
+</script>
+</html>

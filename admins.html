@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>Admins</title>
+</head>
+<body>
+    
+    <!-- main-content -->
+    <div class="main-content">
+        <!-- wrapper -->
+        <div class="wrapper">
+            <!-- title -->
+            <div class="title">
+                <h4>Admins</h4>
+            </div>
+            <!-- end of title -->
+            <section id="admins">
+                <!-- admins-form -->
+                <div class="admins-form">
+                    <form action="admins.php" method="POST" id="admins-form">
+                        <div>
+                            <input type="text" id="username" name="username" placeholder="Username">
+                        </div>
+                        <div>
+                            <input type="text" id="email" name="email" placeholder="Email">
+                        </div>
+                        <div>
+                            <input type="text" id="mobile" name="mobile" placeholder="Mobile Number">
+                        </div>
+                        <div>
+                            <button type="button" id="btn-submit" name="button" onclick="createNewAdmin();">Submit</button>
+                        </div>
+                        <div id="response"></div>
+                    </form>
+                </div>
+                <!-- end of admins-form -->
+            </section>
+            <section id="admins-data">               
+            </section>
+        </div>
+        <!-- end of wrapper -->        
+    </div>
+    <!-- end of main-content -->
+</body>
+<script src="scripts/jQuery.js"></script>
+<script src="scripts/main.js"></script>
+<script>
+    $(document).ready(function () {
+        $.get("head.html", function (data) {
+            $("head").prepend(data);
+        });
+        
+        $.get("header.html", function(data) {
+            $("body").prepend(data);
+        });
+
+        $.get("admins-menu.html", function (data) {
+            $("#admins-data").before(data);
+        });
+        
+        $.get("footer.php", function (data) {
+            $("body").append(data);     
+        });        
+
+        changeData('admins-data', 'admins_data_grid.php');
+        
+        check_session();
+		setInterval(function() {
+            check_session();
+        }, 6000);
+    });
+
+</script>
+</html>

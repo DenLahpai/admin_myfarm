@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+		
+	<title>Home</title>
+</head>
+<body>
+	<!-- main-content -->
+	<div class="main-content">
+		<!-- wrapper -->
+		<div class="wrapper">
+			<section id="home">
+				<div class="title">
+					<h4>Welcome</h4>
+				</div>
+			<!-- link-buttons -->
+			<div class="link-buttons">
+				<div>
+					<a href="admins.html"><button>Admins</button></a>
+				</div>
+				<div>
+					<a href="users.html"><button>Users</button></a>
+				</div>
+				<div>
+					<a href="messages.html"><button>Messages</button></a>
+				</div><div>
+					<button>Users</button>
+				</div>
+				<div>
+					<button>Posts</button>
+				</div><div>
+					<button>Users</button>
+				</div>
+				<div>
+					<button>Posts</button>
+				</div><div>
+					<button>Users</button>
+				</div>
+				<div>
+					<button>Posts</button>
+				</div>
+			</div>
+			<!-- end of link-buttons -->
+		</section>
+		</div>
+		<!-- end of wrapper -->
+	</div>
+	<!-- end of main-content -->
+</body>
+<script type="text/javascript" src="scripts/jQuery.js"></script>
+<script type="text/javascript" src="scripts/main.js"></script>
+<script type="text/javascript">
+	$("document").ready(function () {
+		$.get("head.html", function (data) {
+			$("head").prepend(data);
+		});
+
+		$.get("header.html", function(data) {
+			$("body").prepend(data);
+		});
+		$.get("footer.php", function(data) {
+			$(".main-content").append(data);
+		});
+		check_session();
+		setInterval(function() {
+            check_session();
+        }, 6000);
+	});
+</script>
+</html>
