@@ -443,15 +443,25 @@ function reloadUsersData() {
 }
 
 //function to export Users data
-function exportUsersData(page) {
+function exportData(page) {
 
 	var sorting = $("#sorting");
 	var limit = $("#limit");
 	var search = $("#search");
-	window.location.href = page+'?search='+search.val().trim()+'&limit='+limit.val()+'&sorting='+sorting.val();
-	// $.post(page, {
-	// 	sorting: sorting.val(),
-	// 	limit: limit.val(),
-	// 	search: search.val().trim()
-	// });
+	window.location.href = page+'?search='+search.val().trim()+'&limit='+limit.val()+'&sorting='+sorting.val();	
+}
+
+//function to mark as read or unread
+function readUnread (value, MessagesId) {
+	$.post('read_unread.php', {
+		value: value,
+		MessagesId: MessagesId
+	}, function(data) {
+		if (data == 'OK') {
+			changeData ('messages-data', 'messages_data_grid.php');
+		}
+		else {
+			alert(data);
+		}
+	});
 }

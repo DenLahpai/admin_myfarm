@@ -233,11 +233,33 @@ function table_Messages ($job, $var1, $var2, $sorting, $limit) {
 	$database = new Database();
 
 	switch ($job) {
+
+		case 'rowCount':
+			$query = "SELECT * FROM Messages ;";
+			$database->query($query);
+			return $r = $database->rowCount();
+			break;
+
 		case 'select_all':
 			$query = "SELECT * FROM Messages $sorting LIMIT $limit ;";
 			$database->query($query);
 			return $r = $database->resultset();
 			break;
+
+		case 'read_unread':
+			$query = "UPDATE Messages SET 
+				Seen = :value
+				WHERE Id = :MessagesId
+			;"; 
+			$database->query($query);
+			$database->bind(':value', $_POST['value']);
+			$database->bind(':MessagesId', $_POST['MessagesId']);
+			if ($database->execute()) {
+				echo "OK";
+			}
+			else {
+				echo "There was a connection error! Please try again!";
+			}	
 		
 		default:
 			# code...

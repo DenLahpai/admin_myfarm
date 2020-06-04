@@ -202,6 +202,18 @@ input:read-only {
 	padding: 3px 6px;
 }
 
+.messages-data > div {
+	border: 1px solid red;
+	margin: 12px 0px;
+	padding: 12px;
+}
+
+.unread-message {
+	background: gold;
+	font-weight: bold;
+	color: white;
+}
+
 textarea {
 	padding: 6px;
 	resize: vertical;
@@ -235,6 +247,19 @@ button {
 	color: green;
 	font-weight: bold;
 }
+
+.green-ballot {
+	color: green;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+.red-cross {
+	color: red;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
 
 .error {
 	color: red;

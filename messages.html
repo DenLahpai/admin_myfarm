@@ -33,6 +33,10 @@
 			$("body").prepend(data);
 		});
 
+		$.get("messages_menu.php", function (data) {
+			$("#messages-data").before(data);
+		});
+
 		$.get("footer.php", function(data) {
 			$(".main-content").append(data);
 		});

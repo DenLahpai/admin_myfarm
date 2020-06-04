@@ -44,7 +44,7 @@ $rowCount = table_Users ('rowCount', NULL, NULL, NULL, NULL);
 				<button type="button" id="btn-search" onclick="reloadUsersData();">Search</button>
 			</div>
 			<div class="menu-bar-item">
-				<button type="button" id="btn-export" onclick="exportUsersData('export_users_data.php');">Export</button>
+				<button type="button" id="btn-export" onclick="exportData('export_users_data.php');">Export</button>
 			</div>
 		</div>
 		<!-- menu-bar-items -->		
