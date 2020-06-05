@@ -246,6 +246,25 @@ function table_Messages ($job, $var1, $var2, $sorting, $limit) {
 			return $r = $database->resultset();
 			break;
 
+		case 'search':
+			$search = '%'.$_POST['search'].'%';
+			$query = "SELECT * FROM Messages 
+				WHERE CONCAT (
+				Name,
+				Email,
+				Message
+				) LIKE :search $sorting LIMIT $limit
+			;";
+			$database->query($query);
+			$database->bind(':search', $search);
+			if ($var1 == 'array') {
+				return $database->resultArray();
+			}
+			else {
+				return $database->resultset();
+			}
+			break;			
+
 		case 'read_unread':
 			$query = "UPDATE Messages SET 
 				Seen = :value

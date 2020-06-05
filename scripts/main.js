@@ -444,12 +444,13 @@ function reloadUsersData() {
 
 //function to export Users data
 function exportData(page) {
-
 	var sorting = $("#sorting");
 	var limit = $("#limit");
 	var search = $("#search");
 	window.location.href = page+'?search='+search.val().trim()+'&limit='+limit.val()+'&sorting='+sorting.val();	
 }
+
+//////                   Functions for Messages //////
 
 //function to mark as read or unread
 function readUnread (value, MessagesId) {
@@ -458,10 +459,25 @@ function readUnread (value, MessagesId) {
 		MessagesId: MessagesId
 	}, function(data) {
 		if (data == 'OK') {
-			changeData ('messages-data', 'messages_data_grid.php');
+			reloadMessagesData ();
 		}
 		else {
 			alert(data);
 		}
+	});
+}
+
+// function to reload messages 
+function reloadMessagesData() {
+	var sorting = $("#sorting");
+	var limit = $("#limit");
+	var search = $("#search");
+
+	$.post('messages_data_grid.php', {
+		sorting: sorting.val(),
+		limit: limit.val(),
+		search: search.val().trim()
+		}, function (data) {
+			$("#messages-data").html(data);
 	});
 }
